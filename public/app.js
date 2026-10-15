@@ -18,6 +18,26 @@ nextPhoto.addEventListener('click', () => {
 });
 $('walk').insertBefore(nextPhoto, $('walkMessage'));
 
+const issueLabels = {
+  moniliasis: 'Posible moniliasis',
+  black_pod: 'Posible mazorca negra',
+  witches_broom: 'Posible escoba de bruja',
+  animal_damage: 'Daño de animales',
+  overripe: 'Mazorcas sobremaduras',
+  healthy: 'Sin signos visibles de enfermedad',
+  excess_shade: 'Exceso de sombra',
+  needs_pruning: 'Necesita poda',
+  weeds: 'Maleza',
+  waterlogging: 'Encharcamiento',
+  other: 'Otra observación',
+  unknown: 'No se pudo determinar'
+};
+const subjectLabels = {
+  pod: 'Mazorca', leaf: 'Hoja', tree: 'Árbol', canopy: 'Dosel', beans: 'Granos', other: 'Otro', unknown: 'Escena'
+};
+const confidenceLabels = { low: 'confianza baja', medium: 'confianza media', high: 'confianza alta' };
+const label = (map, value) => map[value] ?? value;
+
 async function api(path, options = {}) {
   const response = await fetch(path, options);
   const data = await response.json();
@@ -78,6 +98,15 @@ async function fileBase64(file) {
   });
 }
 
+function drawScaled(image, maxSide, quality) {
+  const scale = Math.min(1, maxSide / Math.max(image.naturalWidth, image.naturalHeight));
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+  canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+  canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL('image/jpeg', quality);
+}
+
 async function reencode(file) {
   const source = URL.createObjectURL(file);
   try {
@@ -86,17 +115,13 @@ async function reencode(file) {
     await new Promise((resolve, reject) => {
       image.onload = resolve;
       image.onerror = () => reject(new Error(
-        'El navegador no puede decodificar esta imagen. Si es HEIC, convertíla a JPEG o elegí otra foto.'
+        'El navegador no puede decodificar esta imagen. Si es HEIC, conviértela a JPEG o elige otra foto.'
       ));
     });
-    const scale = Math.min(1, 1600 / Math.max(image.naturalWidth, image.naturalHeight));
-    const canvas = document.createElement('canvas');
-    canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
-    canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
-    canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+    // Reencodear en canvas también elimina el EXIF, incluida la ubicación GPS de la foto.
     return {
-      image: canvas.toDataURL('image/jpeg', 0.84),
-      thumbnail: canvas.toDataURL('image/jpeg', 0.62)
+      image: drawScaled(image, 1024, 0.84),
+      thumbnail: drawScaled(image, 256, 0.7)
     };
   } finally {
     URL.revokeObjectURL(source);
@@ -115,7 +140,7 @@ function showDiagnosis(result) {
   addText(observation, result.observation?.scene || 'No se pudo describir la escena.');
   card.append(observation);
   const heading = document.createElement('h3');
-  addText(heading, `${result.subject} · diagnóstico orientativo`);
+  addText(heading, `${label(subjectLabels, result.subject)} · diagnóstico orientativo`);
   card.append(heading);
   const summary = document.createElement('p');
   addText(summary, result.summary);
@@ -123,10 +148,10 @@ function showDiagnosis(result) {
 
   for (const finding of result.findings) {
     const paragraph = document.createElement('p');
-    addText(paragraph, `${finding.issue}: ${finding.evidence} `);
+    addText(paragraph, `${label(issueLabels, finding.issue)}: ${finding.evidence} `);
     const confidence = document.createElement('span');
     confidence.className = 'confidence';
-    addText(confidence, `(${finding.confidence})`);
+    addText(confidence, `(${label(confidenceLabels, finding.confidence)})`);
     paragraph.append(confidence);
     card.append(paragraph);
   }
@@ -172,7 +197,7 @@ function displayReport(report) {
   const list = document.createElement('ul');
   for (const [issue, count] of Object.entries(report.issueCounts)) {
     const item = document.createElement('li');
-    addText(item, `${issue}: ${count}`);
+    addText(item, `${label(issueLabels, issue)}: ${count}`);
     list.append(item);
   }
   box.append(list);
