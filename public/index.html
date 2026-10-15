@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4b2818">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Mazorca</title>
+  </head>
+  <body>
+    <header>
+      <h1>Mazorca</h1>
+      <p>Agrónomo de bolsillo para tu cacao</p>
+    </header>
+    <nav aria-label="Secciones">
+      <button data-tab="walk">Recorrido</button>
+      <button data-tab="report">Reporte</button>
+      <button data-tab="lots">Lotes</button>
+      <button data-tab="cut">Corte</button>
+    </nav>
+    <main>
+      <section id="walk" class="tab">
+        <h2>Recorrido</h2>
+        <label>Lote<select id="walkLot"></select></label>
+        <label>Tomar foto<input id="camera" type="file" accept="image/*" capture="environment"></label>
+        <label>Elegir de la galería<input id="gallery" type="file" accept="image/*"></label>
+        <label>Nota opcional<textarea id="note" maxlength="300"></textarea></label>
+        <p id="walkMessage" class="message"></p>
+        <div id="diagnosis"></div>
+      </section>
+      <section id="report" class="tab" hidden>
+        <h2>Reporte de 7 días</h2>
+        <label>Lote<select id="reportLot"></select></label>
+        <button id="loadReport">Actualizar reporte</button>
+        <div id="reportView"></div>
+        <button id="makePlan">Generar plan de la semana</button>
+        <a id="export" download>Exportar CSV</a>
+        <div id="plan"></div>
+        <button id="listenPlan" hidden>Escuchar plan</button>
+        <p id="audioStatus" class="message"></p>
+        <audio id="planAudio" controls hidden></audio>
+      </section>
+      <section id="lots" class="tab" hidden>
+        <h2>Lotes</h2>
+        <form id="lotForm">
+          <input id="lotName" required maxlength="120" placeholder="Nombre del lote">
+          <input id="lotNotes" maxlength="600" placeholder="Notas">
+          <button>Crear lote</button>
+        </form>
+        <ul id="lotList"></ul>
+      </section>
+      <section id="cut" class="tab" hidden>
+        <h2>Prueba de corte</h2>
+        <label>Lote<select id="cutLot"></select></label>
+        <label>Foto del corte<input id="cutImage" type="file" accept="image/*"></label>
+        <div id="cutView"></div>
+      </section>
+    </main>
+    <footer>La IA orienta; no sustituye a un técnico ni a un laboratorio.</footer>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
