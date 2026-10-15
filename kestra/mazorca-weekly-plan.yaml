@@ -1,0 +1,96 @@
+id: mazorca-weekly-plan
+namespace: local.mazorca
+description: |
+  Cada lunes temprano pide a Mazorca el reporte de 7 días y el plan semanal de cada lote,
+  guarda un resumen en markdown y avisa por Slack solo si en algún lote subió la proporción
+  de mazorcas afectadas respecto a la semana anterior.
+
+inputs:
+  - id: mazorca_url
+    type: STRING
+    displayName: URL de Mazorca
+    description: Dirección donde corre Mazorca. Usa http://host.docker.internal:3000 si Kestra corre en Docker.
+    defaults: http://host.docker.internal:3000
+  - id: lotes
+    type: JSON
+    displayName: Lotes
+    description: Lista de lotes con el id que muestra Mazorca en GET /api/lotes y un nombre para el reporte.
+    defaults: '[{"id": "lote-1", "name": "Lote 1"}]'
+
+tasks:
+  - id: process_lots
+    type: io.kestra.plugin.core.flow.Loop
+    description: Un lote a la vez, porque cada plan usa el modelo local y conviene no saturarlo.
+    values: "{{ inputs.lotes }}"
+    concurrencyLimit: 1
+    tasks:
+      - id: report
+        type: io.kestra.plugin.core.http.Request
+        description: Reporte de los últimos 7 días, sin modelo (conteos y tendencia).
+        uri: "{{ inputs.mazorca_url }}/api/lotes/{{ fromJson(item.value).id }}/report?days=7"
+        method: GET
+      - id: plan
+        type: io.kestra.plugin.core.http.Request
+        description: Plan de acción semanal escrito por el modelo local a partir del mismo reporte.
+        uri: "{{ inputs.mazorca_url }}/api/lotes/{{ fromJson(item.value).id }}/plan?days=7"
+        method: POST
+        contentType: application/json
+        body: "{}"
+        options:
+          timeout:
+            readIdleTimeout: PT10M
+    outputs:
+      - id: name
+        type: STRING
+        value: "{{ fromJson(item.value).name }}"
+      - id: trend
+        type: STRING
+        value: "{{ outputs.report.body | jq('.trend') | first }}"
+      - id: affected_pct
+        type: STRING
+        value: "{{ outputs.report.body | jq('if .affectedPercentage == null then \"sin datos\" else (.affectedPercentage | tostring) + \"%\" end') | first }}"
+      - id: headline
+        type: STRING
+        value: "{{ outputs.plan.body | jq('.headline') | first }}"
+      - id: this_week
+        type: STRING
+        value: "{{ outputs.plan.body | jq('.thisWeek | join(\"; \")') | first }}"
+
+  - id: weekly_summary
+    type: io.kestra.plugin.core.storage.Write
+    description: Resumen de todos los lotes para compartir con el técnico o la cooperativa.
+    extension: .md
+    content: |
+      # Plan semanal de Mazorca — {{ execution.startDate | date("yyyy-MM-dd") }}
+
+      {% for lot in (outputs.process_lots.outputs | jq('sort_by(.item.iteration) | map(.outputs)') | first) %}
+      ## {{ lot.name }}
+      - Mazorcas afectadas: {{ lot.affected_pct }} (tendencia: {{ lot.trend }})
+      - {{ lot.headline }}
+      - Esta semana: {{ lot.this_week }}
+      {% endfor %}
+
+      La IA orienta; no sustituye a un técnico ni a un laboratorio.
+
+  - id: trend_check
+    type: io.kestra.plugin.core.flow.If
+    description: Solo avisa cuando algún lote empeoró, para no llenar el canal de mensajes.
+    condition: "{{ outputs.process_lots.outputs | jq('map(select(.outputs.trend == \"subió\")) | length > 0') | first }}"
+    then:
+      - id: notify
+        type: io.kestra.plugin.slack.notifications.SlackIncomingWebhook
+        url: "{{ secret('SLACK_WEBHOOK_URL') }}"
+        messageText: |
+          :warning: Mazorca: en al menos un lote subió la proporción de mazorcas afectadas esta semana.
+          Revisa el resumen de la ejecución {{ execution.id }} y prioriza la ronda de retiro de mazorcas enfermas.
+    else:
+      - id: no_change
+        type: io.kestra.plugin.core.log.Log
+        message: "Ningún lote empeoró esta semana."
+
+triggers:
+  - id: weekly
+    type: io.kestra.plugin.core.trigger.Schedule
+    description: Lunes a las 6:00, antes de salir a la parcela.
+    cron: "0 6 * * 1"
+    disabled: true
