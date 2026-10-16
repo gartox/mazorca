@@ -35,6 +35,19 @@ test('normaliza la observación y aplica las reglas de conteo', () => {
     findings: [], podCounts: { healthy: 8, affected: 4 }
   }, normalizeObservation({ fruitsVisible: true, fruitCountEstimate: 4 }));
   assert.equal(capped.podCounts.healthy + capped.podCounts.affected, 8);
+
+  const merged = enforceDiagnosisRules({
+    findings: [
+      { issue: 'moniliasis', confidence: 'medium' },
+      { issue: 'black_pod', confidence: 'low' },
+      { issue: 'black_pod', confidence: 'high' },
+      { issue: 'animal_damage', confidence: 'low' }
+    ], podCounts: { healthy: 0, affected: 2 }
+  }, normalizeObservation({ fruitsVisible: true, fruitCountEstimate: 2 }));
+  assert.deepEqual(
+    merged.findings.map(finding => finding.issue),
+    ['pod_disease', 'pod_disease', 'black_pod', 'animal_damage']
+  );
 });
 
 test('hace exactamente dos llamadas y mantiene neutral el prompt de observación', async () => {

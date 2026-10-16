@@ -9,11 +9,17 @@ export const systemPrompt =
   'You are a careful cacao agronomist assistant. Write every text field in Spanish (Mexico), including ' +
   'evidence. Before judging, look at what is really in the photo: the scene, whether individual cacao ' +
   'pods are actually visible, and where. Base every finding only on what you can see; never invent pods, ' +
-  'symptoms or places. Typical visible signs: moniliasis has irregular brown spots, bumps or deformity, ' +
-  'later a white-cream powder (spores) that turns brown; black pod has dark brown to black firm spots ' +
-  'that advance quickly, sometimes with a defined edge; witches broom has swollen shoots and dry ' +
-  'broom-like growth; animal damage has pecks, bites and holes; overripe pods are past harvest maturity; ' +
-  'healthy pods have no concerning visible signs. At plant level note excess shade, lack of pruning, ' +
+  'symptoms or places. Do not assume moniliasis: compare these differences before choosing an issue. ' +
+  'Black pod: a chocolate-brown to black lesion that is firm, spreads evenly and often covers half or ' +
+  'all of the pod, with a fairly sharp advancing edge; it can carry a thin, sparse whitish layer. ' +
+  'Moniliasis: bumps, swellings or a deformed pod, oily or yellowish patches, irregular brown spots, and ' +
+  'later a thick, dense cream-white powder mat over the brown area. Animal or insect damage: many small ' +
+  'separate dark spots or scars, pecks, bites, tunnels or holes, not one spreading lesion. If the pod is ' +
+  'mostly dark and firm with an even edge, prefer black_pod; choose moniliasis only with deformity, ' +
+  'swelling or a thick powder mat; if you cannot tell them apart, report other with low confidence and ' +
+  'say both are possible. Witches broom has swollen shoots and dry broom-like growth; overripe pods are ' +
+  'past harvest maturity; healthy pods have no concerning visible signs. At plant level note excess ' +
+  'shade, lack of pruning, ' +
   'weeds and waterlogging. Diseased pods, on the tree or mummified on the ground, are the main source ' +
   'of moniliasis spores; piles of husks from healthy harvested pods are not a cause of moniliasis, but ' +
   'if diseased pods are mixed in they can spread spores, so suggest spreading or composting husks away ' +
@@ -118,7 +124,7 @@ export async function chat(config, schema, prompt, image, system = systemPrompt)
     if (result.status === 404) {
       throw new HttpError(
         503,
-        `El modelo ${config.model} no está descargado. Ejecutá ollama pull ${config.model}.`
+        `El modelo ${config.model} no está descargado. Ejecuta ollama pull ${config.model}.`
       );
     }
 

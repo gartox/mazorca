@@ -1,10 +1,13 @@
 const subjects = ['pod', 'leaf', 'tree', 'canopy', 'beans', 'other', 'unknown'];
 const issues = [
-  'moniliasis', 'black_pod', 'witches_broom', 'animal_damage', 'overripe', 'healthy',
+  'moniliasis', 'black_pod', 'pod_disease', 'witches_broom', 'animal_damage', 'overripe', 'healthy',
   'excess_shade', 'needs_pruning', 'weeds', 'waterlogging', 'other', 'unknown'
 ];
 const confidence = ['low', 'medium', 'high'];
-const podIssues = new Set(['moniliasis', 'black_pod', 'animal_damage', 'overripe', 'healthy']);
+const podIssues = new Set(['moniliasis', 'black_pod', 'pod_disease', 'animal_damage', 'overripe', 'healthy']);
+// En la evaluación el modelo no distinguió bien moniliasis de mazorca negra; sin confianza alta se
+// reporta como mazorca enferma, porque la práctica es la misma: retirar y enterrar la mazorca.
+const confusable = new Set(['moniliasis', 'black_pod']);
 const object = value => value && typeof value === 'object' && !Array.isArray(value) ? value : {};
 const text = (value, max = 600) => typeof value === 'string' ? value.slice(0, max) : '';
 const list = (value, max, size = 600) => Array.isArray(value)
@@ -108,9 +111,16 @@ function proportionalCounts(counts, limit) {
 }
 
 export function enforceDiagnosisRules(value, observation) {
-  const result = { ...value };
+  const result = {
+    ...value,
+    findings: value.findings.map(finding =>
+      confusable.has(finding.issue) && finding.confidence !== 'high'
+        ? { ...finding, issue: 'pod_disease' }
+        : finding
+    )
+  };
   if (!observation.fruitsVisible) {
-    result.findings = value.findings.filter(finding => !podIssues.has(finding.issue));
+    result.findings = result.findings.filter(finding => !podIssues.has(finding.issue));
     result.podCounts = { healthy: 0, affected: 0 };
     return result;
   }

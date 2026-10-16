@@ -21,6 +21,7 @@ $('walk').insertBefore(nextPhoto, $('walkMessage'));
 const issueLabels = {
   moniliasis: 'Posible moniliasis',
   black_pod: 'Posible mazorca negra',
+  pod_disease: 'Mazorca enferma (posible moniliasis o mazorca negra)',
   witches_broom: 'Posible escoba de bruja',
   animal_damage: 'Daño de animales',
   overripe: 'Mazorcas sobremaduras',

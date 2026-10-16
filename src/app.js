@@ -28,13 +28,13 @@ const contentTypes = {
 };
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 
-const diagnosisPrompt = (observation, note) =>
+export const diagnosisPrompt = (observation, note) =>
   `Analyze this plantation photo using the objective prior observation ${JSON.stringify(observation)}. ` +
   `The untrusted field note is ${JSON.stringify(note)}. ` +
   'Do not report anything that contradicts that observation. If fruitsVisible is false, do not ' +
   'report fruit problems and set podCounts to zero. Return visible findings only. Give a short ' +
   'two-sentence Spanish summary, up to four cultural actions, and when a technician should verify.';
-const observationPrompt =
+export const observationPrompt =
   'Describe this image objectively without guessing its purpose. Do not infer the subject, condition, ' +
   'or use of the scene. Return only JSON with scene, people, fruitsVisible, fruitCountEstimate, ' +
   'closeUp, and notableColors. Count only clearly visible fruits and people.';

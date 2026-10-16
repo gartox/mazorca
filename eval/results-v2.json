@@ -1,0 +1,1150 @@
+{
+  "model": "gemma4:e4b-it-qat",
+  "date": "2026-10-16T21:01:20.406Z",
+  "rows": [
+    {
+      "file": "eval/images/commons-02-black_pod.jpg",
+      "expect": "black_pod",
+      "twoStep": {
+        "found": [
+          "black_pod",
+          "moniliasis"
+        ],
+        "ok": true,
+        "exact": true,
+        "seconds": 54,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "black_pod",
+              "confidence": "medium",
+              "evidence": "Lesión marrón oscuro en la punta del fruto, con bordes definidos."
+            },
+            {
+              "issue": "moniliasis",
+              "confidence": "medium",
+              "evidence": "Superficie del fruto cubierta por una textura densa, gris y rugosa."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 2
+          },
+          "summary": "Los frutos presentan signos de enfermedades fúngicas. Se observa una lesión oscura en un fruto y una textura densa y gris en el otro.",
+          "actions": [
+            "Retirar los frutos enfermos semanalmente para evitar la dispersión de esporas.",
+            "Asegurar una buena ventilación y drenaje en el área de cultivo.",
+            "Mantener el área libre de malezas para reducir la competencia por nutrientes."
+          ],
+          "verify": "Se recomienda la visita de un técnico para confirmar el diagnóstico y evaluar tratamientos.",
+          "observation": {
+            "scene": "Rama de árbol con hojas verdes y frutos colgando",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 2,
+            "closeUp": true,
+            "notableColors": [
+              "Verde",
+              "Marrón",
+              "Blanco",
+              "Gris"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-03-black_pod.jpg",
+      "expect": "black_pod",
+      "twoStep": {
+        "found": [
+          "moniliasis"
+        ],
+        "ok": true,
+        "exact": false,
+        "seconds": 58,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "moniliasis",
+              "confidence": "medium",
+              "evidence": "Presencia de una lesión oscura que se extiende y una capa blanca pulverulenta visible en la superficie del fruto."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 1
+          },
+          "summary": "Se observa un solo fruto de cacao con una lesión oscura que se extiende. La presencia de una capa blanca pulverulenta sugiere la posible presencia de Moniliasis.",
+          "actions": [
+            "Remover los frutos enfermos semanalmente para evitar la dispersión de esporas.",
+            "Asegurar una buena ventilación y drenaje en el área de cultivo.",
+            "Mantener la higiene alrededor de los troncos para prevenir la propagación.",
+            "Evitar el contacto directo de los frutos enfermos con el suelo."
+          ],
+          "verify": "Se recomienda la verificación por parte de un técnico para confirmar el diagnóstico y determinar el manejo adecuado.",
+          "observation": {
+            "scene": "Un objeto de forma alargada y textura rugosa sobre un fondo negro.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 1,
+            "closeUp": true,
+            "notableColors": [
+              "marrón",
+              "negro",
+              "rojo",
+              "blanco"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-04-black_pod.jpg",
+      "expect": "black_pod",
+      "twoStep": {
+        "found": [
+          "other"
+        ],
+        "ok": false,
+        "exact": false,
+        "seconds": 55,
+        "result": {
+          "subject": "other",
+          "findings": [
+            {
+              "issue": "other",
+              "confidence": "high",
+              "evidence": "Dos objetos cilíndricos sobre fondo negro con manchas marrones y blancas."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 0
+          },
+          "summary": "Se observan dos objetos cilíndricos colocados sobre una superficie negra. Estos objetos presentan una combinación de colores marrón y blanco.",
+          "actions": [
+            "Mantener la higiene en el área de cosecha",
+            "Revisar la salud general de la planta"
+          ],
+          "verify": "Se recomienda la verificación por parte de un técnico para identificar la naturaleza de los objetos.",
+          "observation": {
+            "scene": "Dos objetos de forma cilíndrica colocados sobre una superficie negra.",
+            "people": 0,
+            "fruitsVisible": false,
+            "fruitCountEstimate": 0,
+            "closeUp": true,
+            "notableColors": [
+              "marrón",
+              "blanco"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-05-black_pod.jpg",
+      "expect": "black_pod",
+      "twoStep": {
+        "found": [
+          "moniliasis"
+        ],
+        "ok": true,
+        "exact": false,
+        "seconds": 17,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "moniliasis",
+              "confidence": "high",
+              "evidence": "Presencia de una capa blanca, esponjosa y densa sobre la superficie del fruto, lo cual es característico de la moniliasis."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 1
+          },
+          "summary": "Se observa un fruto con signos claros de moniliasis, caracterizado por una capa blanca y esponjosa. Es importante tomar medidas para controlar la propagación de este hongo.",
+          "actions": [
+            "Retirar los frutos enfermos y mummificados de la planta semanalmente.",
+            "Asegurar que los residuos de cosecha se mantengan alejados de los troncos.",
+            "Regular la sombra para mejorar la ventilación del cultivo."
+          ],
+          "verify": "Se recomienda consultar a un técnico para evaluar el estado general del cultivo y determinar si se requieren medidas adicionales.",
+          "observation": {
+            "scene": "Primer plano de un objeto alargado y marrón con una capa de material blanco y esponjoso sobre una superficie negra.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 1,
+            "closeUp": true,
+            "notableColors": [
+              "marrón",
+              "blanco",
+              "negro"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-06-animal_damage.jpg",
+      "expect": "animal_damage",
+      "twoStep": {
+        "found": [
+          "animal_damage",
+          "black_pod"
+        ],
+        "ok": true,
+        "exact": true,
+        "seconds": 22,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "animal_damage",
+              "confidence": "high",
+              "evidence": "La superficie del fruto presenta múltiples manchas oscuras y pequeñas, dispersas por toda la cáscara, lo que sugiere daños por animales o insectos."
+            },
+            {
+              "issue": "black_pod",
+              "confidence": "low",
+              "evidence": "Aunque la mayoría de las manchas son pequeñas y dispersas, algunas áreas oscuras podrían considerarse lesiones iniciales de pod negra, pero la naturaleza puntual de las marcas favorece la hipótesis de daño biótico."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 1
+          },
+          "summary": "Se observa un fruto con múltiples manchas oscuras y pequeñas distribuidas por su superficie. Estas marcas son consistentes con daños causados por animales o insectos, aunque algunas áreas oscuras podrían ser lesiones iniciales de pod negra.",
+          "actions": [
+            "Retirar el fruto afectado de la planta para evitar la dispersión de esporas.",
+            "Mantener la higiene en el área de cosecha para prevenir la propagación de enfermedades.",
+            "Revisar la presencia de plagas o animales en la zona de cultivo."
+          ],
+          "verify": "Se recomienda consultar a un técnico para confirmar la naturaleza de las manchas y descartar cualquier infección fúngica.",
+          "observation": {
+            "scene": "Un objeto grande y redondeado con una textura rugosa y manchas oscuras, que presenta un tallo en la parte superior.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 1,
+            "closeUp": false,
+            "notableColors": [
+              "negro",
+              "blanco"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-07-animal_damage.jpg",
+      "expect": "animal_damage",
+      "twoStep": {
+        "found": [
+          "black_pod",
+          "moniliasis"
+        ],
+        "ok": true,
+        "exact": false,
+        "seconds": 56,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "black_pod",
+              "confidence": "medium",
+              "evidence": "Fruto oscuro con textura rugosa y parches blancos visibles en la superficie."
+            },
+            {
+              "issue": "moniliasis",
+              "confidence": "medium",
+              "evidence": "Presencia de irregularidades en la superficie y parches blancos que podrían indicar pudrición."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 1
+          },
+          "summary": "Se observa un solo fruto de cacao con una apariencia oscura y textura rugosa. Los signos visibles sugieren una posible infección por pudrición o enfermedad de la cáscara.",
+          "actions": [
+            "Retirar los frutos enfermos de la planta semanalmente.",
+            "Asegurar una buena ventilación alrededor de la base del árbol.",
+            "Mantener la higiene y evitar el contacto con material vegetal en descomposición.",
+            "Regular la sombra para evitar condiciones excesivamente húmedas."
+          ],
+          "verify": "Se recomienda la visita de un técnico para confirmar el diagnóstico y evaluar el estado general de la planta.",
+          "observation": {
+            "scene": "Objeto oscuro con textura rugosa sobre fondo blanco",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 1,
+            "closeUp": false,
+            "notableColors": [
+              "negro",
+              "blanco"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-08-animal_damage.jpg",
+      "expect": "animal_damage",
+      "twoStep": {
+        "found": [],
+        "ok": false,
+        "exact": false,
+        "seconds": 47,
+        "result": {
+          "subject": "other",
+          "findings": [],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 0
+          },
+          "summary": "La imagen presenta un primer plano de una estructura biológica sobre fondo blanco. No se pueden identificar problemas específicos de podas debido a la naturaleza del acercamiento y la observación proporcionada.",
+          "actions": [
+            "Inspeccionar semanalmente la presencia de podas enfermas en el campo.",
+            "Asegurar una buena aireación y drenaje en el área de cultivo.",
+            "Mantener el área libre de malezas.",
+            "Realizar la cosecha en el momento óptimo."
+          ],
+          "verify": "Se recomienda la visita de un técnico para una evaluación in situ y determinar el estado real del cultivo.",
+          "observation": {
+            "scene": "Objeto biológico de forma ovalada sobre fondo blanco",
+            "people": 0,
+            "fruitsVisible": false,
+            "fruitCountEstimate": 0,
+            "closeUp": true,
+            "notableColors": [
+              "negro",
+              "blanco"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-09-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy",
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 58,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los frutos visibles presentan colores maduros (rojo y naranja) y no muestran lesiones, deformidades ni manchas oscuras características de enfermedades."
+            },
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "No se observan signos de daño por animales o insectos, ni síntomas de moniliasis o podredumbre negra."
+            }
+          ],
+          "podCounts": {
+            "healthy": 4,
+            "affected": 0
+          },
+          "summary": "El árbol presenta un follaje verde y frutos maduros sin signos visibles de enfermedades. Se recomienda mantener las prácticas culturales para asegurar una buena cosecha y prevenir futuros problemas.",
+          "actions": [
+            "Mantener la poda regular para asegurar la circulación de aire y luz.",
+            "Asegurar un drenaje adecuado en la zona de cultivo.",
+            "Retirar cualquier fruto que muestre signos de deterioro o madurez excesiva.",
+            "Controlar la presencia de malezas alrededor de la base del árbol."
+          ],
+          "verify": "Consultar a un técnico si se observan cambios en el color o textura de los frutos o aparición de manchas.",
+          "observation": {
+            "scene": "árbol con hojas verdes y frutos colgando",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 4,
+            "closeUp": false,
+            "notableColors": [
+              "verde",
+              "rojo",
+              "marrón"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-10-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy",
+          "healthy",
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 19,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "La mayoría de los frutos visibles presentan un color verde uniforme y una apariencia firme, sin signos visibles de enfermedades o daños."
+            },
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los frutos verdes visibles en la rama no muestran lesiones oscuras, deformidades ni presencia de esporas visibles."
+            },
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "El fruto en la parte inferior derecha, aunque más oscuro, mantiene una forma regular y no presenta la textura o el aspecto de una podredumbre avanzada."
+            }
+          ],
+          "podCounts": {
+            "healthy": 7,
+            "affected": 1
+          },
+          "summary": "La mayoría de los frutos se encuentran en buen estado, mostrando un color verde uniforme. Se observa un fruto más oscuro en la parte inferior derecha que requiere observación para determinar su estado exacto.",
+          "actions": [
+            "Mantener una buena higiene en el manejo de la cosecha para evitar la propagación de enfermedades.",
+            "Asegurar que los frutos se recolecten en su punto óptimo de madurez para evitar el sobremaduro.",
+            "Mantener la zona de cultivo libre de malezas para mejorar la salud general del árbol."
+          ],
+          "verify": "Se recomienda consultar a un técnico para evaluar el estado del fruto más oscuro y confirmar si presenta algún signo de enfermedad.",
+          "observation": {
+            "scene": "Rama de árbol con hojas y frutos verdes en un entorno exterior con vegetación baja.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 8,
+            "closeUp": false,
+            "notableColors": [
+              "verde",
+              "marrón",
+              "gris"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-11-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy",
+          "needs_pruning",
+          "excess_shade"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 58,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los frutos visibles son de color verde, firmes y no presentan lesiones, hinchazón ni manchas oscuras visibles."
+            },
+            {
+              "issue": "needs_pruning",
+              "confidence": "medium",
+              "evidence": "Se recomienda revisar la estructura del árbol para asegurar una poda adecuada que mejore la aireación."
+            },
+            {
+              "issue": "excess_shade",
+              "confidence": "low",
+              "evidence": "El entorno es boscoso y sombreados, lo cual debe ser monitoreado para asegurar que no sea excesivo."
+            }
+          ],
+          "podCounts": {
+            "healthy": 25,
+            "affected": 0
+          },
+          "summary": "El árbol presenta frutos verdes y sanos en un ambiente sombreados. Se recomienda mantener prácticas culturales para asegurar el desarrollo óptimo de la cosecha.",
+          "actions": [
+            "Realizar poda regular para mejorar la ventilación del árbol.",
+            "Asegurar un manejo adecuado de la sombra en el cultivo.",
+            "Retirar semanalmente cualquier fruto que muestre signos de enfermedad.",
+            "Realizar la cosecha en el momento óptimo de madurez."
+          ],
+          "verify": "Se sugiere consultar a un técnico para una evaluación detallada del dosel y la estructura del cultivo.",
+          "observation": {
+            "scene": "Árbol con frutos en un suelo cubierto de hojas secas y vegetación boscosa",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 25,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Marrón",
+              "Gris"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-12-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 50,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "El fruto es de color verde, tiene una forma uniforme y no presenta lesiones oscuras extendidas, hinchazón o moho visible."
+            }
+          ],
+          "podCounts": {
+            "healthy": 1,
+            "affected": 0
+          },
+          "summary": "El fruto visible se encuentra en buen estado general, mostrando un color verde uniforme. No se observan signos claros de enfermedades como la pudrición negra o la moniliasis en esta etapa.",
+          "actions": [
+            "Mantener la poda adecuada para asegurar una buena aireación del dosel.",
+            "Retirar semanalmente cualquier fruto que muestre signos de daño o enfermedad.",
+            "Asegurar un drenaje adecuado en la zona de cultivo.",
+            "Gestionar la hojarasca lejos de los troncos para evitar la acumulación de esporas."
+          ],
+          "verify": "Se sugiere la verificación por un técnico si se observan cambios en el color, textura o aparición de manchas oscuras en el fruto.",
+          "observation": {
+            "scene": "Un árbol con una rama gruesa y hojas verdes, con un fruto verde colgando de la rama. El suelo está cubierto de hojas secas.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 1,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Marrón"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-13-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy",
+          "overripe"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 61,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Se observan granos de cacao de color naranja brillante que parecen estar en buen estado."
+            },
+            {
+              "issue": "overripe",
+              "confidence": "medium",
+              "evidence": "Algunos granos son de color marrón muy oscuro, lo que sugiere que podrían estar más allá de la madurez óptima de cosecha."
+            }
+          ],
+          "podCounts": {
+            "healthy": 3,
+            "affected": 3
+          },
+          "summary": "La fotografía muestra varios granos de cacao, algunos parecen sanos y maduros, mientras que otros están muy oscuros, lo que sugiere que podrían estar más allá de su tiempo óptimo de cosecha. Es importante monitorear la madurez para asegurar la mejor calidad del fruto.",
+          "actions": [
+            "Cosechar los granos en el punto de madurez adecuado para garantizar la calidad.",
+            "Retirar semanalmente los granos que presenten daños o signos de enfermedad.",
+            "Asegurar una regulación adecuada de la sombra en el cultivo."
+          ],
+          "verify": "Se recomienda verificar con un técnico si se observan síntomas de enfermedades o si la madurez de los granos es consistente.",
+          "observation": {
+            "scene": "Un primer plano de una planta con hojas verdes y frutos colgando de un tronco cubierto de musgo.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 6,
+            "closeUp": true,
+            "notableColors": [
+              "Verde",
+              "Marrón",
+              "Rojo",
+              "Naranja"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-14-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 60,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Las vainas visibles son de color verde, firmes y no presentan lesiones oscuras, deformidades ni manchas blancas características de enfermedades."
+            }
+          ],
+          "podCounts": {
+            "healthy": 5,
+            "affected": 0
+          },
+          "summary": "Las vainas de cacao visibles en la imagen se encuentran en estado saludable, mostrando un color verde uniforme y sin signos de enfermedades. El ambiente parece ser un sistema de sombra densa, lo cual es típico de este cultivo.",
+          "actions": [
+            "Regular la poda para asegurar una buena circulación de aire en el dosel.",
+            "Mantener el control de malezas en el área de cultivo.",
+            "Asegurar una cosecha oportuna para evitar la madurez excesiva.",
+            "Revisar la densidad de la sombra para optimizar el crecimiento."
+          ],
+          "verify": "Se recomienda la visita de un técnico para evaluar la densidad de la sombra y el manejo del dosel.",
+          "observation": {
+            "scene": "Árbol con hojas verdes y frutos colgando en un bosque con suelo cubierto de hojas secas.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 5,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Marrón"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-15-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 52,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los frutos visibles son de color verde, firmes y no presentan lesiones, deformidades ni manchas visibles."
+            }
+          ],
+          "podCounts": {
+            "healthy": 6,
+            "affected": 0
+          },
+          "summary": "Los frutos visibles se encuentran en etapa de crecimiento y presentan un color verde uniforme. No se observan signos de enfermedades como la podredumbre negra ni daños por insectos en las yemas.",
+          "actions": [
+            "Mantener la limpieza alrededor del tronco y la base de la planta.",
+            "Asegurar una cosecha oportuna para evitar la madurez excesiva.",
+            "Regular la sombra del dosel para optimizar la fotosíntesis.",
+            "Eliminar malezas cercanas al tronco."
+          ],
+          "verify": "Se recomienda la visita de un técnico para evaluar la estructura general del dosel y el manejo del suelo.",
+          "observation": {
+            "scene": "Primer plano de un tronco de árbol con hojas verdes y frutos verdes colgando",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 6,
+            "closeUp": true,
+            "notableColors": [
+              "Verde",
+              "Marrón"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-16-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy",
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 15,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los frutos visibles son de color marrón claro, con forma ovalada y no presentan signos visibles de enfermedad o daño."
+            },
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los frutos visibles son de color marrón claro, con forma ovalada y no presentan signos visibles de enfermedad o daño."
+            }
+          ],
+          "podCounts": {
+            "healthy": 6,
+            "affected": 0
+          },
+          "summary": "La foto muestra un árbol de cacao con varios frutos visibles que parecen estar en buen estado. Se recomienda mantener la higiene del cultivo y realizar podas periódicas para asegurar una buena producción.",
+          "actions": [
+            "Retirar los frutos caídos o podridos semanalmente.",
+            "Realizar podas de mantenimiento para mejorar la circulación de aire.",
+            "Asegurar un drenaje adecuado en la zona de cultivo."
+          ],
+          "verify": "Se recomienda consultar a un técnico para evaluar el estado general del cultivo y planificar las labores de manejo.",
+          "observation": {
+            "scene": "Un árbol con hojas verdes y troncos marrones frente a una pared oscura.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 6,
+            "closeUp": false,
+            "notableColors": [
+              "verde",
+              "marrón",
+              "negro"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-17-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy",
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 16,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los dos frutos visibles son de color rojo brillante, tienen una forma normal y no presentan lesiones, deformidades ni manchas visibles."
+            },
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "No se observan signos de moniliasis, manchas negras o daños por animales o insectos en los frutos."
+            }
+          ],
+          "podCounts": {
+            "healthy": 2,
+            "affected": 0
+          },
+          "summary": "Los frutos de cacao visibles se encuentran en buen estado, mostrando un color rojo brillante y una forma normal. Se recomienda mantener una buena higiene en el manejo de la cosecha y revisar periódicamente la presencia de plagas o enfermedades.",
+          "actions": [
+            "Mantener una buena higiene en el manejo de la cosecha.",
+            "Revisar periódicamente la presencia de plagas o enfermedades.",
+            "Asegurar una adecuada ventilación en el área de cultivo.",
+            "Realizar la cosecha en el momento óptimo."
+          ],
+          "verify": "Consultar a un técnico para cualquier duda sobre el manejo de la cosecha o la detección temprana de enfermedades.",
+          "observation": {
+            "scene": "Un plano medio de una rama de árbol con hojas verdes y dos frutos grandes de color rojo brillante colgando.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 2,
+            "closeUp": false,
+            "notableColors": [
+              "rojo",
+              "verde",
+              "marrón"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "eval/images/commons-18-healthy.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "excess_shade"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 17,
+        "result": {
+          "subject": "tree",
+          "findings": [
+            {
+              "issue": "excess_shade",
+              "confidence": "low",
+              "evidence": "La densidad del follaje podría indicar una posible necesidad de regular la sombra, aunque no se observa un problema severamente definido."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 0
+          },
+          "summary": "El árbol se encuentra en un entorno de cultivo con follaje verde y un tronco oscuro. No se observan frutos, por lo que no se pueden evaluar problemas de pod. Se recomienda revisar la densidad de sombra y el manejo general del cultivo.",
+          "actions": [
+            "Asegurar un drenaje adecuado en el suelo para evitar el encharcamiento.",
+            "Realizar una poda de mantenimiento para mejorar la circulación de aire y la penetración de luz.",
+            "Mantener el área libre de malezas.",
+            "Realizar la cosecha de frutos maduros en el momento oportuno."
+          ],
+          "verify": "Se recomienda consultar a un técnico para una evaluación detallada del manejo del cultivo y la salud del árbol.",
+          "observation": {
+            "scene": "Árbol con hojas verdes y tronco oscuro en un área de tierra con vegetación de fondo bajo lluvia",
+            "people": 0,
+            "fruitsVisible": false,
+            "fruitCountEstimate": 0,
+            "closeUp": true,
+            "notableColors": [
+              "Verde",
+              "Marrón",
+              "Gris"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "docs/field-row-ripe-pod.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "excess_shade",
+          "weeds"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 63,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "excess_shade",
+              "confidence": "medium",
+              "evidence": "El dosel del cultivo se observa muy denso, lo que podría estar limitando la ventilación y la penetración de luz en el suelo."
+            },
+            {
+              "issue": "weeds",
+              "confidence": "low",
+              "evidence": "Se observan pequeñas plantas verdes creciendo entre la hojarasca en el área de cultivo."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 0
+          },
+          "summary": "La plantación presenta un dosel frondoso y un suelo cubierto de hojarasca. No se observan signos claros de enfermedades en los frutos debido a la distancia, pero se recomienda monitorear la salud general del cultivo.",
+          "actions": [
+            "Regular el manejo de la sombra para asegurar la ventilación adecuada.",
+            "Mantener el área libre de malezas mediante deshierbe manual.",
+            "Realizar la cosecha de los frutos en el momento óptimo de madurez.",
+            "Retirar semanalmente cualquier fruto que muestre signos de deterioro visible."
+          ],
+          "verify": "Se recomienda la visita de un técnico para una evaluación detallada de la salud del cultivo y la detección temprana de plagas o enfermedades.",
+          "observation": {
+            "scene": "Bosque con árboles frondosos y suelo cubierto de hojas secas.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 1,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Marrón",
+              "Amarillo"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "docs/field-young-pods.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 54,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "high",
+              "evidence": "Los frutos visibles presentan color verde y marrón normal, sin signos evidentes de lesiones, deformidades o daños."
+            }
+          ],
+          "podCounts": {
+            "healthy": 10,
+            "affected": 0
+          },
+          "summary": "El árbol presenta un follaje verde y los frutos visibles parecen estar en buen estado. No se observan signos de enfermedades o daños significativos en las vainas.",
+          "actions": [
+            "Mantener la poda regular para asegurar una buena circulación de aire.",
+            "Retirar semanalmente cualquier fruto que muestre signos de deterioro.",
+            "Asegurar un drenaje adecuado en el área de cultivo.",
+            "Gestionar la hojarasca lejos del tronco."
+          ],
+          "verify": "Se recomienda consultar a un técnico si se observan cambios en el color o textura de los frutos.",
+          "observation": {
+            "scene": "Árbol con follaje verde y frutos colgando",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 10,
+            "closeUp": false,
+            "notableColors": [
+              "verde",
+              "marrón"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "docs/harvest-pile-husks.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "overripe",
+          "healthy",
+          "excess_shade"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 56,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "overripe",
+              "confidence": "medium",
+              "evidence": "Varias vainas presentan color amarillo y marrón, indicando que han pasado su punto óptimo de cosecha."
+            },
+            {
+              "issue": "healthy",
+              "confidence": "medium",
+              "evidence": "La mayoría de las vainas visibles se encuentran en estado verde, sin signos evidentes de lesiones fúngicas o daños severos."
+            },
+            {
+              "issue": "excess_shade",
+              "confidence": "low",
+              "evidence": "El entorno boscoso y la densidad de la vegetación sugieren una posible necesidad de evaluar el manejo del dosel."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 0
+          },
+          "summary": "Se observa una gran cantidad de frutos en el suelo, muchos de ellos en etapas avanzadas de madurez. No se identificaron signos claros de enfermedades fúngicas en las vainas visibles.",
+          "actions": [
+            "Realizar la cosecha oportuna para evitar la sobremaduración de los frutos.",
+            "Mantener el área libre de malezas para mejorar la sanidad del suelo.",
+            "Evaluar la densidad del dosel para asegurar una adecuada ventilación y penetración de luz.",
+            "Retirar y desechar las vainas caídas fuera del área de cultivo."
+          ],
+          "verify": "Se recomienda la visita de un técnico para evaluar la salud general del cultivo y el manejo del dosel.",
+          "observation": {
+            "scene": "Un área boscosa con vegetación densa y troncos de árboles. Hay una gran cantidad de frutas esparcidas en el suelo.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 80,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Amarillo",
+              "Marrón"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "docs/harvest-beans-bucket.jpg",
+      "expect": "healthy",
+      "twoStep": {
+        "found": [
+          "healthy",
+          "overripe",
+          "excess_shade"
+        ],
+        "ok": true,
+        "falseAlarm": false,
+        "seconds": 65,
+        "result": {
+          "subject": "pod",
+          "findings": [
+            {
+              "issue": "healthy",
+              "confidence": "medium",
+              "evidence": "Los frutos visibles en la pila parecen estar en estado de madurez y sin lesiones visibles de enfermedades."
+            },
+            {
+              "issue": "overripe",
+              "confidence": "low",
+              "evidence": "Algunos frutos presentan cambios de color avanzados (marrón/amarillo oscuro) que sugieren que han pasado su punto óptimo de cosecha."
+            },
+            {
+              "issue": "excess_shade",
+              "confidence": "medium",
+              "evidence": "El área presenta una vegetación densa y un dosel cerrado, lo que indica una posible deficiencia de luz solar."
+            }
+          ],
+          "podCounts": {
+            "healthy": 150,
+            "affected": 0
+          },
+          "summary": "Se observa una gran cantidad de frutos cosechados en un ambiente de alta densidad. Los frutos parecen estar en estado de madurez, aunque se recomienda revisar la calidad de la cosecha y la sanidad del área.",
+          "actions": [
+            "Asegurar la cosecha en el momento óptimo para maximizar la calidad del grano.",
+            "Mantener la limpieza del área de cosecha y retirar frutos dañados.",
+            "Evaluar la necesidad de podas para mejorar la ventilación y la penetración de luz.",
+            "Regular la sombra para optimizar el desarrollo y la producción de los frutos."
+          ],
+          "verify": "Se recomienda consultar a un técnico si se detectan síntomas de enfermedades o plagas específicas en los árboles.",
+          "observation": {
+            "scene": "Un área boscosa con vegetación densa y suelo cubierto de hojas secas, donde se observan grandes cantidades de frutos dispersos y apilados.",
+            "people": 0,
+            "fruitsVisible": true,
+            "fruitCountEstimate": 150,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Marrón",
+              "Amarillo",
+              "Blanco"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "docs/field-path.jpg",
+      "expect": "no_pods",
+      "twoStep": {
+        "found": [
+          "weeds",
+          "excess_shade"
+        ],
+        "ok": true,
+        "invented": false,
+        "seconds": 14,
+        "result": {
+          "subject": "tree",
+          "findings": [
+            {
+              "issue": "weeds",
+              "confidence": "medium",
+              "evidence": "Presencia de vegetación no deseada en el borde del camino y entre los árboles."
+            },
+            {
+              "issue": "excess_shade",
+              "confidence": "medium",
+              "evidence": "La densidad del dosel parece ser alta, lo que podría indicar exceso de sombra en el cultivo."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 0
+          },
+          "summary": "La plantación muestra un camino de tierra flanqueado por vegetación densa y hojas caídas. Se observan indicios de maleza y posible exceso de sombra en el dosel.",
+          "actions": [
+            "Controlar y eliminar la maleza en las áreas de cultivo.",
+            "Ajustar la densidad del dosel para asegurar una penetración adecuada de luz.",
+            "Realizar podas de mantenimiento para mejorar la aireación y la circulación de aire."
+          ],
+          "verify": "Se recomienda consultar con un técnico para evaluar la densidad del dosel y el manejo de la maleza.",
+          "observation": {
+            "scene": "Camino de tierra flanqueado por vegetación densa con hojas caídas en el suelo.",
+            "people": 0,
+            "fruitsVisible": false,
+            "fruitCountEstimate": 0,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Marrón",
+              "Gris"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "file": "docs/field-plot-understory.jpg",
+      "expect": "no_pods",
+      "twoStep": {
+        "found": [
+          "weeds",
+          "excess_shade"
+        ],
+        "ok": true,
+        "invented": false,
+        "seconds": 95,
+        "result": {
+          "subject": "tree",
+          "findings": [
+            {
+              "issue": "weeds",
+              "confidence": "medium",
+              "evidence": "Hay una cantidad considerable de vegetación baja y maleza cubriendo el suelo entre los árboles."
+            },
+            {
+              "issue": "excess_shade",
+              "confidence": "low",
+              "evidence": "La densidad del dosel es alta, lo que podría afectar la penetración de luz en el sotobosque."
+            }
+          ],
+          "podCounts": {
+            "healthy": 0,
+            "affected": 0
+          },
+          "summary": "La foto muestra una plantación de cacao con un dosel denso y abundante vegetación en el suelo. Se recomienda revisar la gestión de malezas y la estructura del cultivo para optimizar el ambiente.",
+          "actions": [
+            "Controlar y eliminar la maleza en el sotobosque de manera regular.",
+            "Evaluar la necesidad de podas de mantenimiento para mejorar la aireación.",
+            "Regular la densidad del dosel para asegurar una penetración adecuada de luz.",
+            "Asegurar que el área de cultivo tenga un drenaje adecuado."
+          ],
+          "verify": "Se recomienda consultar a un técnico para evaluar la estructura del dosel y el manejo de la luz en la plantación.",
+          "observation": {
+            "scene": "Bosque con árboles frondosos y suelo cubierto de hojas secas y vegetación baja.",
+            "people": 0,
+            "fruitsVisible": false,
+            "fruitCountEstimate": 0,
+            "closeUp": false,
+            "notableColors": [
+              "Verde",
+              "Marrón"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
