@@ -27,6 +27,8 @@ In tests with real photos from the parcel, Gemma described the scenes well: peop
 
 That is why Mazorca uses two steps: first it produces a neutral observation, “What the AI sees,” which the producer can verify at a glance; then it produces a diagnosis that cannot contradict that observation. This is transparency, not a patch. Mazorca is an observation aid and does not replace a technician or a laboratory.
 
+An evaluation on 23 photos ([eval/](eval/README.md)) found that the first prompt called 6 of 7 diseased pods "moniliasis", including black pod and insect damage. The prompt now contrasts the visible differences, and when the model is not highly confident between moniliasis and black pod, Mazorca reports "Mazorca enferma (posible moniliasis o mazorca negra)", since the action is the same. Wrong disease names dropped from 7 of 7 to 1 of 7, with no false alarms on 14 healthy pods.
+
 The author's parcel is 3 hectares in Cárdenas, Tabasco, where moniliasis is the main problem.
 
 ## Limits
